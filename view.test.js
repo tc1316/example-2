@@ -13,4 +13,12 @@ describe('Page view', () => {
 
     expect(document.querySelectorAll('p').length).toBe(2);
   });
+
+  it('check addParagraph adds to array', () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+
+    const view = new View();
+    view.addParagraph("new paragraph")
+    expect(document.querySelectorAll('p').length).toBe(3);
+  });
 });
